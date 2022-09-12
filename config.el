@@ -60,8 +60,8 @@
 (display-time-mode 1)
 
 ;; Org
-(setq org-directory "~/.org/")
-(setq org-agenda-files '("~/.org/agenda.org"))
+(setq org-directory "~/org/")
+(setq org-agenda-files '("~/org/agenda.org"))
 
 ;; Idris2
 (use-package! idris2-mode
