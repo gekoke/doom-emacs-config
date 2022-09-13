@@ -27,6 +27,10 @@
 (setq user-full-name "John Doe"
       user-mail-address "john@doe.com")
 
+;; Misc
+; Turn off annoying message when connecting with emacsclient
+(setq server-client-instructions nil)
+
 ;; Font
 (setq doom-font                (font-spec :family "IosevkaTerm" :size 16 :weight 'medium)
       doom-variable-pitch-font (font-spec :family "IosevkaTerm" :size 16 :weight 'medium))
@@ -54,6 +58,11 @@
 (setq display-time-default-load-average nil)
 (setq display-time-format "%H:%M")
 (display-time-mode 1)
+
+;; Workspaces
+; Disable new workspace being created when reconnecting to emacs daemon
+(after! persp-mode
+    (setq persp-emacsclient-init-frame-behaviour-override "main"))
 
 ;; Org
 (setq org-directory "~/org/")
