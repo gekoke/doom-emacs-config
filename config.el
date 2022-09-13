@@ -66,7 +66,7 @@
 
 ;; Org
 (setq org-directory "~/org/")
-(setq org-agenda-files '("~/org/agenda.org"))
+(setq org-agenda-files (list "~/org/"))
 (setq org-log-done 'time)
 
 ;; Idris2
