@@ -62,6 +62,7 @@
 ;; Org
 (setq org-directory "~/org/")
 (setq org-agenda-files '("~/org/agenda.org"))
+(setq org-log-done 'time)
 
 ;; Idris2
 (use-package! idris2-mode
