@@ -43,10 +43,6 @@
 
 ;; Keybindings
 (map! :leader "x" #'kill-current-buffer)
-(map! :leader "g c a" #'magit-commit-amend)
-(map! :leader "g c e" #'magit-commit-extend)
-(map! :leader "g c r" #'magit-commit-reword)
-(map! :leader "g n" #'magit-init)
 (map! :leader "r a" #'dired-jump)
 (map! :map ranger-mode-map
       :m  "; ;" 'dired-create-empty-file)
