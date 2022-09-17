@@ -45,6 +45,7 @@
 
 ;; Ranger
 (after! dired
+  (setq ranger-override-dired 'ranger)
   (ranger-override-dired-mode t))
 
 ;; Keybindings
