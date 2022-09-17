@@ -36,14 +36,16 @@
       doom-variable-pitch-font (font-spec :family "IosevkaTerm" :size 16 :weight 'medium))
 
 ;; Dired
-(setq delete-by-moving-to-trash t)
+(after! dired
+  (setq delete-by-moving-to-trash t))
 
 ;; Theme
 (setq doom-theme 'doom-gruvbox)
 (setq display-line-numbers-type 'relative)
 
 ;; Ranger
-(ranger-override-dired-mode t)
+(after! dired
+  (ranger-override-dired-mode t))
 
 ;; Keybindings
 (map! :leader "x" #'kill-current-buffer)
