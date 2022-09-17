@@ -75,6 +75,10 @@
 (setq org-agenda-files (list "~/org/"))
 (setq org-log-done 'time)
 
+;; Autocommit
+(setq gac-automatically-push-p t)
+(setq gac-automatically-add-new-files-p t)
+
 ;; Prolog
 (add-to-list 'auto-mode-alist '("\\.pl\\'" . prolog-mode))
 
