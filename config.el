@@ -79,9 +79,6 @@
 (setq gac-automatically-push-p t)
 (setq gac-automatically-add-new-files-p t)
 
-;; Prolog
-(add-to-list 'auto-mode-alist '("\\.pl\\'" . prolog-mode))
-
 ;; Calendar
 (setq calendar-week-start-day 1)
 (setq calendar-holidays
@@ -97,3 +94,6 @@
         (holiday-fixed 24 24 "Jõululaupäev")
         (holiday-fixed 24 25 "Esimene jõulupüha")
         (holiday-fixed 24 26 "Teine jõulupüha")))
+
+;; Prolog
+(add-to-list 'auto-mode-alist '("\\.pl\\'" . prolog-mode))
