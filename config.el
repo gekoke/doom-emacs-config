@@ -24,8 +24,8 @@
 ;; - `map!' for binding new keys
 
 ;; User details
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
+(setq user-full-name "gekoke"
+      user-mail-address "gekoke@lazycantina.xyz")
 
 ;; Misc
 ; Turn off annoying message when connecting with emacsclient
