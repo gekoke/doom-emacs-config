@@ -75,34 +75,8 @@
 (setq org-agenda-files (list "~/org/"))
 (setq org-log-done 'time)
 
-;; Idris2
-(use-package! idris2-mode
-  :mode ("\\.l?idr\\'" . idris2-mode)
-  :config
-
-  (setq idris2-semantic-source-highlighting nil)
-  (setq idris2-stay-in-current-window-on-compiler-error t)
-
-  (after! lsp-mode
-    (add-to-list 'lsp-language-id-configuration '(idris2-mode . "idris2"))
-
-    (lsp-register-client
-      (make-lsp-client
-        :new-connection (lsp-stdio-connection "idris2-lsp")
-        :major-modes '(idris2-mode)
-        :server-id 'idris2-lsp)))
-
-  (setq lsp-semantic-tokens-enable t)
-  (add-hook 'idris2-mode-hook #'lsp!))
-
-(after! company
-  (setq company-global-modes
-    '(not erc-mode
-       message-mode
-       help-mode
-       gud-mode
-       vterm-mode
-       idris2-repl-mode)))  ;; Fix Idris2 REPL crashing on input
+;; Prolog
+(add-to-list 'auto-mode-alist '("\\.pl\\'" . prolog-mode))
 
 ;; Calendar
 (setq calendar-week-start-day 1)
