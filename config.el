@@ -40,13 +40,16 @@
   (setq delete-by-moving-to-trash t))
 
 ;; Theme
-(setq doom-theme 'doom-gruvbox)
+(setq doom-theme 'doom-one)
 (setq display-line-numbers-type 'relative)
 
 ;; Ranger
-(after! dired
-  (setq ranger-override-dired 'ranger)
-  (ranger-override-dired-mode t))
+(after! (dired ranger)
+  (setq ranger-override-dired 'ranger))
+
+;; Treemacs
+;;; Enable icons
+(setq doom-themes-treemacs-theme "doom-colors")
 
 ;; Keybindings
 (map! :leader "x" #'kill-current-buffer)
