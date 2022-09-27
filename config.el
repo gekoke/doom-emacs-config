@@ -23,7 +23,7 @@
       user-mail-address "gekoke@lazycantina.xyz")
 
 ;; Misc
-; Turn off annoying message when connecting with emacsclient
+;;; Turn off annoying message when connecting with emacsclient
 (setq server-client-instructions nil)
 
 ;; Font
@@ -53,7 +53,7 @@
       :m  "; ;" 'dired-create-empty-file)
 (map! :localleader
       (:map ranger-mode-map
-      "k" #'dired-create-directory))
+       "k" #'dired-create-directory))
 (map! :map vterm-mode-map "C-c w" #'evil-window-next)
 
 ;; Modeline
@@ -62,9 +62,9 @@
 (display-time-mode 1)
 
 ;; Workspaces
-; Disable new workspace being created when reconnecting to emacs daemon
+                                        ; Disable new workspace being created when reconnecting to emacs daemon
 (after! persp-mode
-    (setq persp-emacsclient-init-frame-behaviour-override "main"))
+  (setq persp-emacsclient-init-frame-behaviour-override "main"))
 
 ;; Org
 (after! org
