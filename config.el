@@ -103,8 +103,7 @@
           ("WAIT" . +org-todo-onhold)
           ("HOLD" . +org-todo-onhold)
           ("PROJ" . +org-todo-project)
-          ("NO"   . +org-todo-cancel)
-          ("KILL" . +org-todo-cancel))))
+          ("NO"   . +org-todo-cancel))))
 
 ;; Autocommit
 (setq gac-automatically-push-p t)
