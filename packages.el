@@ -54,3 +54,5 @@
 (package! ement :recipe (:host github :repo "alphapapa/ement.el"))
 
 (package! git-auto-commit-mode)
+
+(package! org-contacts)

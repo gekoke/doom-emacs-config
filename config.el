@@ -68,10 +68,11 @@
 
 ;; Org
 (after! org
+  (use-package! org-contacts
+    :custom (org-contacts-files '("~/org/contacts.org")))
   (setq org-directory "~/org/")
   (setq org-agenda-files (list "~/org/"))
   (setq org-log-done 'time)
-  (setq org-agenda-span 14)
   (setq org-todo-keywords
         '((sequence
            "TODO(t)"    ; A task that needs doing & is ready to do
