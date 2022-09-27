@@ -49,10 +49,6 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
-;; Matrix client
-(package! plz :recipe (:host github :repo "alphapapa/plz.el"))
-(package! ement :recipe (:host github :repo "alphapapa/ement.el"))
-
 (package! git-auto-commit-mode)
 
 (package! org-contacts)
