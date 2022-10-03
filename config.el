@@ -27,12 +27,13 @@
 (setq server-client-instructions nil)
 
 ;; Font
-(setq doom-font                (font-spec :family "JetBrainsMono Nerd Font" :size 14 :weight 'semi-bold)
-      doom-variable-pitch-font (font-spec :family "JetBrainsMono Nerd Font" :size 14 :weight 'semi-bold))
+(setq doom-font                (font-spec :family "JetBrainsMono Nerd Font" :size 15 :weight 'semi-bold)
+      doom-variable-pitch-font (font-spec :family "JetBrainsMono Nerd Font" :size 15 :weight 'semi-bold))
 
 ;; Dired
 (after! dired
-  (setq delete-by-moving-to-trash t))
+  (setq delete-by-moving-to-trash t)
+  (setq large-file-warning-threshold nil))
 
 ;; Theme
 (setq doom-theme 'doom-one)
@@ -49,6 +50,8 @@
 ;; Keybindings
 (map! :leader "x" #'kill-current-buffer)
 (map! :leader "r a" #'dired-jump)
+(map! :leader "v" #'magit-status)
+(map! :leader "V" #'magit-status-here)
 (map! :map ranger-mode-map
       :m  "; ;" 'dired-create-empty-file)
 (map! :localleader
