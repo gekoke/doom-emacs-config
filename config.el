@@ -27,8 +27,8 @@
 (setq server-client-instructions nil)
 
 ;; Font
-(setq doom-font                (font-spec :family "IosevkaTerm" :size 16 :weight 'medium)
-      doom-variable-pitch-font (font-spec :family "IosevkaTerm" :size 16 :weight 'medium))
+(setq doom-font                (font-spec :family "JetBrainsMono Nerd Font" :size 14 :weight 'semi-bold)
+      doom-variable-pitch-font (font-spec :family "JetBrainsMono Nerd Font" :size 14 :weight 'semi-bold))
 
 ;; Dired
 (after! dired
