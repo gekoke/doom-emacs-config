@@ -34,6 +34,10 @@
        :size 15
        :weight 'semi-bold))
 
+;; Theme
+(setq doom-theme 'doom-nord)
+(setq display-line-numbers-type 'relative)
+
 ;; Dired
 (after! dired
   (setq delete-by-moving-to-trash t)
