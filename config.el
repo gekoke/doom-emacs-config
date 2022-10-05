@@ -64,7 +64,7 @@
 (map! :localleader
       (:map ranger-mode-map
             "k" #'dired-create-directory))
-(map! :map vterm-mode-map "C-c w" #'evil-window-next)
+(map! :map vterm-mode-map "C-c C-w" #'evil-window-next)
 
 ;; Modeline
 (setq display-time-default-load-average nil)
