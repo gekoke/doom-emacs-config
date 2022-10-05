@@ -1,4 +1,5 @@
-;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
+;;; $DOOMDIR/config.el -
+*- lexical-binding: t; -*-
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
@@ -27,8 +28,11 @@
 (setq server-client-instructions nil)
 
 ;; Font
-(setq doom-font                (font-spec :family "JetBrainsMono Nerd Font" :size 15 :weight 'semi-bold)
-      doom-variable-pitch-font (font-spec :family "JetBrainsMono Nerd Font" :size 15 :weight 'semi-bold))
+(setq doom-font
+      (font-spec
+       :family "FiraCode Nerd Font"
+       :size 15
+       :weight 'semi-bold))
 
 ;; Dired
 (after! dired
@@ -36,7 +40,7 @@
   (setq large-file-warning-threshold nil))
 
 ;; Theme
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-nord)
 (setq display-line-numbers-type 'relative)
 
 ;; Ranger
