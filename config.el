@@ -37,19 +37,15 @@
 (setq doom-theme 'doom-nord)
 (setq display-line-numbers-type 'relative)
 
-;; Dired
-(after! dired
-  (setq delete-by-moving-to-trash t)
-  (setq large-file-warning-threshold nil))
-
-;; Theme
-(setq doom-theme 'doom-nord)
-(setq display-line-numbers-type 'relative)
-
 ;; Modeline
 (setq display-time-default-load-average nil)
 (setq display-time-format "%H:%M")
 (display-time-mode 1)
+
+;; Dired
+(after! dired
+  (setq delete-by-moving-to-trash t)
+  (setq large-file-warning-threshold nil))
 
 ;; Workspaces
 ;;; Disable new workspace being created when reconnecting to emacs daemon
