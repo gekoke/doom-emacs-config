@@ -93,6 +93,8 @@
 (map! :leader "r a" #'dired-jump)
 (map! :leader "v" #'magit-status)
 (map! :leader "V" #'magit-status-here)
+(map! :leader "e" #'+vertico/switch-workspace-buffer)
+(map! :leader "E" #'switch-to-buffer)
 (map! :map ranger-mode-map
       :m  "; ;" 'dired-create-empty-file)
 (map! :localleader
