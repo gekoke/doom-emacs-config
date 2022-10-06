@@ -46,6 +46,32 @@
 (setq doom-theme 'doom-nord)
 (setq display-line-numbers-type 'relative)
 
+;; Modeline
+(setq display-time-default-load-average nil)
+(setq display-time-format "%H:%M")
+(display-time-mode 1)
+
+;; Workspaces
+;;; Disable new workspace being created when reconnecting to emacs daemon
+(after! persp-mode
+  (setq persp-emacsclient-init-frame-behaviour-override "main"))
+
+;; Calendar
+(setq calendar-week-start-day 1)
+(setq calendar-holidays
+      '((holiday-fixed 1 1 "Uusaasta")
+        (holiday-fixed 2 24 "Iseseisvuspäev")
+        (holiday-easter-etc -2 "Suur Reede")
+        (holiday-easter-etc 0 "Ülestõusmispühade 1. püha")
+        (holiday-fixed 5 1 "Kevadpüha")
+        (holiday-easter-etc 50 "Nelipühade 1. püha")
+        (holiday-fixed 6 23 "Võidupüha")
+        (holiday-fixed 6 24 "Jaanipäev")
+        (holiday-fixed 8 20 "Taasiseseisvumispäev")
+        (holiday-fixed 24 24 "Jõululaupäev")
+        (holiday-fixed 24 25 "Esimene jõulupüha")
+        (holiday-fixed 24 26 "Teine jõulupüha")))
+
 ;; Ranger
 (after! (dired ranger)
   (setq ranger-override-dired 'ranger))
@@ -53,6 +79,10 @@
 ;; Treemacs
 ;;; Enable icons
 (setq doom-themes-treemacs-theme "doom-colors")
+
+;; Autocommit
+(setq gac-automatically-push-p t)
+(setq gac-automatically-add-new-files-p t)
 
 ;; Keybindings
 (map! :leader "x" #'kill-current-buffer)
@@ -65,16 +95,6 @@
       (:map ranger-mode-map
             "k" #'dired-create-directory))
 (map! :map vterm-mode-map "C-c C-w" #'evil-window-next)
-
-;; Modeline
-(setq display-time-default-load-average nil)
-(setq display-time-format "%H:%M")
-(display-time-mode 1)
-
-;; Workspaces
-;;; Disable new workspace being created when reconnecting to emacs daemon
-(after! persp-mode
-  (setq persp-emacsclient-init-frame-behaviour-override "main"))
 
 ;; Org
 (after! org
@@ -114,26 +134,6 @@
           ("HOLD" . +org-todo-onhold)
           ("PROJ" . +org-todo-project)
           ("NO"   . +org-todo-cancel))))
-
-;; Autocommit
-(setq gac-automatically-push-p t)
-(setq gac-automatically-add-new-files-p t)
-
-;; Calendar
-(setq calendar-week-start-day 1)
-(setq calendar-holidays
-      '((holiday-fixed 1 1 "Uusaasta")
-        (holiday-fixed 2 24 "Iseseisvuspäev")
-        (holiday-easter-etc -2 "Suur Reede")
-        (holiday-easter-etc 0 "Ülestõusmispühade 1. püha")
-        (holiday-fixed 5 1 "Kevadpüha")
-        (holiday-easter-etc 50 "Nelipühade 1. püha")
-        (holiday-fixed 6 23 "Võidupüha")
-        (holiday-fixed 6 24 "Jaanipäev")
-        (holiday-fixed 8 20 "Taasiseseisvumispäev")
-        (holiday-fixed 24 24 "Jõululaupäev")
-        (holiday-fixed 24 25 "Esimene jõulupüha")
-        (holiday-fixed 24 26 "Teine jõulupüha")))
 
 ;; Prolog
 (add-to-list 'auto-mode-alist '("\\.pl\\'" . prolog-mode))
