@@ -141,3 +141,7 @@
 
 ;; Prolog
 (add-to-list 'auto-mode-alist '("\\.pl\\'" . prolog-mode))
+
+;; Latex
+(setq org-latex-compiler "lualatex")
+(setq org-preview-latex-default-process 'dvisvgm)
