@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: nix-module
-# key: @@m
+# key: /m
 # --
 { pkgs
 , lib
