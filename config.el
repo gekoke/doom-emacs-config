@@ -72,6 +72,14 @@
         (holiday-fixed 24 25 "Esimene jõulupüha")
         (holiday-fixed 24 26 "Teine jõulupüha")))
 
+;; mu4e
+(after! mu4e
+  (setq
+   mu4e-root-maildir (expand-file-name "~/.maildir")
+   mu4e-sent-folder "/Sent"
+   mu4e-drafts-folder "/Drafts"
+   mu4e-trash-folder "/Trash"))
+
 ;; Ranger
 (after! (dired ranger)
   (setq ranger-override-dired 'ranger))
