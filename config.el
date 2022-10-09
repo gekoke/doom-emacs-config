@@ -90,6 +90,7 @@
 
 ;; Keybindings
 (map! :leader "x" #'kill-current-buffer)
+(map! :leader "r l" #'align-regexp)
 (map! :leader "r a" #'dired-jump)
 (map! :leader "v" #'magit-status)
 (map! :leader "V" #'magit-status-here)
