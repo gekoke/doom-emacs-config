@@ -108,6 +108,7 @@
   (use-package! org-contacts
     :custom (org-contacts-files '("~/org/contacts.org")))
   (setq org-directory "~/org/")
+  (setq org-attach-id-dir "~/org/.attach/")
   (setq org-agenda-files (list "~/org/"))
   (setq org-log-done 'time)
   (setq org-todo-keywords
