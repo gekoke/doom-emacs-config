@@ -165,4 +165,3 @@
 
 ;; Latex
 (setq org-latex-compiler "lualatex")
-(setq org-preview-latex-default-process 'dvisvgm)
