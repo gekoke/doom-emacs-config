@@ -18,10 +18,6 @@
 ;;   `require' or `use-package'.
 ;; - `map!' for binding new keys
 
-;; User details
-(setq user-full-name "gekoke"
-      user-mail-address "gekoke@lazycantina.xyz")
-
 ;; Misc
 ;;; Turn off annoying message when connecting with emacsclient
 (setq server-client-instructions nil)
@@ -70,15 +66,23 @@
 
 ;; mu4e
 (after! mu4e
-  (setq
-   mu4e-root-maildir (expand-file-name "~/.maildir")
-   mu4e-sent-folder "/Sent"
-   mu4e-drafts-folder "/Drafts"
-   mu4e-trash-folder "/Trash"))
-
-;; Ranger
-(after! (dired ranger)
-  (setq ranger-override-dired 'ranger))
+  (setq message-send-mail-function 'smtpmail-send-it)
+  (setq mu4e-contexts
+        (list
+         (make-mu4e-context
+          :name "Personal"
+          :match-func
+          (lambda (msg)
+            (when msg
+              (string-prefix-p "/personal" (mu4e-message-field msg :maildir))))
+          :vars '((user-mail-address . "gekoke@lazycantina.xyz")
+                  (user-full-name . "gekoke")
+                  (smtpmail-smtp-server . "smtp.fastmail.com")
+                  (smtpmail-smtp-service . 465)
+                  (smtpmail-stream-type . ssl)
+                  (mu4e-sent-folder . "/personal/Sent")
+                  (mu4e-drafts-folder . "/personal/Drafts")
+                  (mu4e-trash-folder . "/personal/Trash"))))))
 
 ;; Treemacs
 ;;; Enable icons
