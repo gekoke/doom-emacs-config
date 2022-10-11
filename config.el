@@ -43,6 +43,10 @@
   (setq delete-by-moving-to-trash t)
   (setq large-file-warning-threshold nil))
 
+;; Ranger
+(after! (dired ranger)
+  (setq ranger-override-dired 'ranger))
+
 ;; Workspaces
 ;;; Disable new workspace being created when reconnecting to emacs daemon
 (after! persp-mode
