@@ -120,6 +120,7 @@
   (setq org-attach-id-dir "~/org/.attach/")
   (setq org-agenda-files (list "~/org/"))
   (setq org-log-done 'time)
+  (setq org-startup-with-inline-images t)
 
   (use-package! org-contacts
     :custom (org-contacts-files '("~/org/contacts.org")))
