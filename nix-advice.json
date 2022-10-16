@@ -1,0 +1,10 @@
+{
+  "supportedFeatures": [
+    "csharp",
+    "haskell",
+    "nix",
+    "latex",
+    "mu4e",
+    "prolog"
+  ]
+}
