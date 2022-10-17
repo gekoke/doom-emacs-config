@@ -4,7 +4,9 @@
     "haskell",
     "nix",
     "latex",
-    "mu4e",
+    "email",
+    "pdf",
+    "graphical",
     "prolog"
   ]
 }

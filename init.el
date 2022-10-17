@@ -69,7 +69,7 @@
        ;;word-wrap         ; soft wrapping with language-aware indent
 
        :emacs
-       (dired +icons +ranger)             ; making dired pretty [functional]
+       (dired +ranger)             ; making dired pretty [functional]
        electric          ; smarter, keyword-based electric-indent
        ;;ibuffer         ; interactive buffer management
        undo              ; persistent, smarter undo for your inevitable mistakes
@@ -200,3 +200,4 @@
 (if-supports! latex (doom! :lang latex))
 (if-supports! pdf (doom! :tools pdf))
 (if-supports! mu4e (doom! :email mu4e))
+(if-supports! graphical (doom! :emacs (dired +icons +ranger)))
