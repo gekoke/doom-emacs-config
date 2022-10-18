@@ -27,7 +27,7 @@
 ;; Font
 (setq doom-font
       (font-spec
-       :family "FiraCode Nerd Font"
+       :family "Iosevka Term"
        :size 15
        :weight 'semi-bold))
 
@@ -71,25 +71,24 @@
         (holiday-fixed 24 26 "Teine jõulupüha")))
 
 ;; mu4e
-(if-supports! mu4e
-  (after! mu4e
-    (setq message-send-mail-function 'smtpmail-send-it)
-    (setq mu4e-contexts
-          (list
-           (make-mu4e-context
-            :name "Personal"
-            :match-func
-            (lambda (msg)
-              (when msg
-                (string-prefix-p "/personal" (mu4e-message-field msg :maildir))))
-            :vars '((user-mail-address . "gekoke@lazycantina.xyz")
-                    (user-full-name . "gekoke")
-                    (smtpmail-smtp-server . "smtp.fastmail.com")
-                    (smtpmail-smtp-service . 465)
-                    (smtpmail-stream-type . ssl)
-                    (mu4e-sent-folder . "/personal/Sent")
-                    (mu4e-drafts-folder . "/personal/Drafts")
-                    (mu4e-trash-folder . "/personal/Trash")))))))
+(after! mu4e
+  (setq message-send-mail-function 'smtpmail-send-it)
+  (setq mu4e-contexts
+        (list
+         (make-mu4e-context
+          :name "Personal"
+          :match-func
+          (lambda (msg)
+            (when msg
+              (string-prefix-p "/personal" (mu4e-message-field msg :maildir))))
+          :vars '((user-mail-address . "gekoke@lazycantina.xyz")
+                  (user-full-name . "gekoke")
+                  (smtpmail-smtp-server . "smtp.fastmail.com")
+                  (smtpmail-smtp-service . 465)
+                  (smtpmail-stream-type . ssl)
+                  (mu4e-sent-folder . "/personal/Sent")
+                  (mu4e-drafts-folder . "/personal/Drafts")
+                  (mu4e-trash-folder . "/personal/Trash"))))))
 
 ;; Treemacs
 ;;; Enable icons
@@ -158,22 +157,25 @@
           ("NO"   . +org-todo-cancel))))
 
 ;; Prolog
-(if-supports! prolog
-  (after! lsp-mode
-    (add-to-list 'lsp-language-id-configuration '(prolog-mode . "prolog-ls"))
-    (lsp-register-client
-     (make-lsp-client
-      :new-connection
-      (lsp-stdio-connection (list "swipl"
-                                  "-g" "use_module(library(lsp_server))."
-                                  "-g" "lsp_server:main"
-                                  "-t" "halt"
-                                  "--" "stdio"))
-      :major-modes '(prolog-mode)
-      :priority 1
-      :multi-root t
-      :server-id 'prolog-ls))))
+(after! lsp-mode
+  (add-to-list 'lsp-language-id-configuration '(prolog-mode . "prolog-ls"))
+  (lsp-register-client
+   (make-lsp-client
+    :new-connection
+    (lsp-stdio-connection (list "swipl"
+                                "-g" "use_module(library(lsp_server))."
+                                "-g" "lsp_server:main"
+                                "-t" "halt"
+                                "--" "stdio"))
+    :major-modes '(prolog-mode)
+    :priority 1
+    :multi-root t
+    :server-id 'prolog-ls)))
 
 ;; Latex
-(if-supports! latex
-  (setq org-latex-compiler "lualatex"))
+(setq org-latex-compiler "lualatex")
+
+;; C
+(if-supports! c
+  (after! lsp
+    (setq lsp-clangd-binary-path (executable-find "clang"))))

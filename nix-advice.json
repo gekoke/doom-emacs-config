@@ -1,12 +1,1 @@
-{
-  "supportedFeatures": [
-    "csharp",
-    "haskell",
-    "nix",
-    "latex",
-    "email",
-    "pdf",
-    "graphical",
-    "prolog"
-  ]
-}
+/nix/store/7s3ialp5w8r3sz0l4lalgxsr1m9xpkfk-home-manager-files/.config/doom/nix-advice.json

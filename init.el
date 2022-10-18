@@ -194,10 +194,10 @@
        ;;literate
        (default +bindings +smartparens))
 
-(if-supports! csharp (doom! :lang (csharp +dotnet +lsp)))
+(if-supports! c (doom! :lang (cc +lsp)))
 (if-supports! haskell (doom! :lang (haskell +lsp)))
-(if-supports! nix (doom! :lang nix))
-(if-supports! latex (doom! :lang latex))
-(if-supports! pdf (doom! :tools pdf))
-(if-supports! mu4e (doom! :email mu4e))
-(if-supports! graphical (doom! :emacs (dired +icons +ranger)))
+(doom! :lang latex)
+(doom! :tools pdf)
+(doom! :lang nix)
+(doom! :email mu4e)
+(doom! :emacs (dired +icons +ranger))
